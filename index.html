@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converter</title>
+    <link rel = "stylesheet" href = "styles.css">
+</head>
+<body>
+    <div class = "container">
+        <h1>Number Converter</h1>
+        <h2>Binary To Decimal</h2>
+            <textarea class = "inputbox" id = "inputbox" placeholder="Enter binary number"></textarea><br>
+            <input type = "checkbox" id = "signed" name = "signed" class = "checkbox_l">
+            <label for = "signed">Signed Integer</label>
+            <br>
+            <button class = "fnc" id = "swap">Swap (Decimal to Binary)</button>
+            <button class = "fnc" id = "clear" onclick = "clearText()">Clear</button>
+            <button class = "fnc" id = "calculate" onclick = "validateInput()">Convert</button>
+            <br>
+            <p class = "results" id = results>
+                Decimal: 
+            </p>
+            <!-- Implement how to instructions at bottom of page  --> 
+    </div>
+    <script src = "main.js"></script>
+</body>
+</html>

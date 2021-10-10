@@ -1,0 +1,70 @@
+body {
+    background-color: #F4F6F7;
+}
+
+h1 {
+    color: rgb(31, 100, 197);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+
+h2 {
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.container {
+    text-align: justify;
+}
+
+
+.inputbox {
+    border: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+    height: 30px;
+    width: 500px;
+    margin-left: 20px;
+    resize: none;
+}
+
+.checkbox_l {
+    margin-left: 20px;
+}
+
+p, label {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 13px;
+    text-align: center;
+}
+
+.fnc {
+    height: 30px;
+}
+
+/*Functionality buttons*/
+button[id = "swap"] {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+
+.results {
+    border-left: 5px solid blue;
+    font-size: 18px;
+    text-align: left;
+    margin-left: 20px;
+    padding: 5px;
+}
+
+
+button[id = "clear"] {
+    width: 80px;
+}
+
+button[id = "calculate"] {
+    width: 90px;
+}
+
