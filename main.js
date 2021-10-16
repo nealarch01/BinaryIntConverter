@@ -3,7 +3,8 @@ var inputBox = document.getElementById("inputbox");
 
 const converter = Object.freeze({
     BINTODEC: 0,
-    DECTOBIN: 1
+    DECTOBIN: 1,
+    ERROR: -1
 });
 
 var operationType = converter.BINTODEC; // by default
@@ -89,9 +90,14 @@ function signedBinToDec(input) {
                 return;
         }
     }
+    if(input.length > 64) {
+        operationType = -1; // ERROR
+        displayResult("64 bit limit exceeded");
+    }
     // once bits have been inverted, add one binary bit
     var carry = '1';
     var addedInput = ""; 
+    var numOfChars = 0;
     for(let i = reversedInput.length - 1; i >= 0; i--) {
         if(carry === '1') {
             if(reversedInput[i] === '1') {
@@ -130,16 +136,8 @@ function signedBinToDec(input) {
     displayResult(finalRes);
 }
 
-function reverseStr(someBinaryString) {
-    var mid = floor(someBinaryString / 2);
-    var j = someBinaryString.length - 1;
-    for(let i = 0; i <= mid; i++) {
-        
-    }
-}
-
 function displayResult(finalResult) {
-    var resultMsg;
+    var resultMsg = "";
     switch(operationType) {
         case converter.BINTODEC:
             resultMsg = "Decimal: ";
@@ -149,6 +147,12 @@ function displayResult(finalResult) {
             resultMsg = "Binary: ";
             resultMsg += finalResult;
             break;
+        case converter.ERROR:
+            resultMsg = "Error: ";
+            resultMsg += finalResult;
+            document.getElementById("results").style.borderLeftColor = "red";
+            document.getElementById("results").innerHTML = resultMsg;
+        break;
     }
     document.getElementById("results").style.borderLeftColor = "green";
     document.getElementById("results").innerHTML = resultMsg;

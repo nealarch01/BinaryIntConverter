@@ -68,3 +68,13 @@ button[id = "calculate"] {
     width: 90px;
 }
 
+footer {
+    position: fixed;
+    bottom: 0;
+    color: black;
+    width: 100%;
+}
+
+ a {
+     color: hotpink;
+ }
