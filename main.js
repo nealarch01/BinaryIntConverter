@@ -22,7 +22,7 @@ function validateInput() {
         if(strInput[i] == ' ') continue;
         const inputCh = strInput.charCodeAt(i);
         if(inputCh > 57 || inputCh < 48) {
-            invalidInput(strInput[i]);
+            invalidInput("Invalid Character Found");
             return;
         }
     }
@@ -34,8 +34,7 @@ function validateInput() {
     }
 }
 
-function invalidInput(invChar) {
-    let errorMsg = "Invalid character: " + invChar;
+function invalidInput(errorMsg) {
     document.getElementById("results").style.borderLeftColor = "red";
     document.getElementById("results").innerHTML = errorMsg;
 }
@@ -66,7 +65,7 @@ function unsignedBinToDec(input) {
                 exponent++;
                 break;
             default:
-                invalidInput(input[i]);
+                invalidInput("Invalid character found");
                 return;
         }
     }
@@ -86,13 +85,13 @@ function signedBinToDec(input) {
                 break;
             case(' '): break; // do nothing
             default:
-                invalidInput(input[i]);
+                invalidInput("Invalid character found");
                 return;
         }
     }
     if(input.length > 64) {
-        operationType = -1; // ERROR
-        displayResult("64 bit limit exceeded");
+        invalidInput("64 Bit Binary Limit Exceeded");
+        return;
     }
     // once bits have been inverted, add one binary bit
     var carry = '1';
@@ -147,12 +146,6 @@ function displayResult(finalResult) {
             resultMsg = "Binary: ";
             resultMsg += finalResult;
             break;
-        case converter.ERROR:
-            resultMsg = "Error: ";
-            resultMsg += finalResult;
-            document.getElementById("results").style.borderLeftColor = "red";
-            document.getElementById("results").innerHTML = resultMsg;
-        break;
     }
     document.getElementById("results").style.borderLeftColor = "green";
     document.getElementById("results").innerHTML = resultMsg;
