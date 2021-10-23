@@ -10,12 +10,12 @@
 <body>
     <div class = "container">
         <h1>Number Converter</h1>
-        <h2>Binary To Decimal</h2>
+        <h2 id = "conv">Binary To Decimal</h2>
             <textarea class = "inputbox" id = "inputbox" placeholder="Enter binary number"></textarea><br>
             <input type = "checkbox" id = "signed" name = "signed" class = "checkbox_l">
             <label for = "signed">Signed Integer</label>
             <br>
-            <button class = "fnc" id = "swap">Swap (Decimal to Binary)</button>
+            <button class = "fnc" id = "swap" onclick = "changeOperationType()">Swap (Decimal to Binary)</button>
             <button class = "fnc" id = "clear" onclick = "clearText()">Clear</button>
             <button class = "fnc" id = "calculate" onclick = "validateInput()">Convert</button>
             <br>
