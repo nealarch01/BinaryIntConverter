@@ -20,7 +20,7 @@ function changeOperationType() {
     let resultType = "";
     let inputBoxPlaceholder = "";
     let convh2 = "";
-    // first swap operation type, change display va;ues
+    // swap operation type and change display information
     switch(operationType) { // operation type case is the previous state
         case converter.BINTODEC:
             operationType = converter.DECTOBIN; // change conversion type 
@@ -138,8 +138,8 @@ function signedBinToDec(input) {
         return;
    }
     // once bits have been inverted, add one binary bit
-    var carry = '1';
-    var addedInput = ""; 
+    let carry = '1';
+    let addedInput = ""; 
     for(let i = reversedInput.length - 1; i >= 0; i--) {
         if(carry === '1') {
             if(reversedInput[i] === '1') {
@@ -158,8 +158,8 @@ function signedBinToDec(input) {
     for(let i = addedInput.length - 1; i >= 0; i--) {
         reversedInput += addedInput[i];
     }
-    var exponent = 0;
-    var decResult = 0;
+    let exponent = 0;
+    let decResult = 0;
     // no need to validate input since string has already been checked 
     for(let i = reversedInput.length; i >= 0; i--) {
         let singleBinaryInput = 0;
